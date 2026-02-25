@@ -107,16 +107,19 @@ def build_scheduler(slack_client) -> AsyncIOScheduler:
 
     # ── Layer C: Notion ───────────────────────────────────────────────
 
-    # C: Attio → Notion daily sync — 7 AM every day
-    from notion_sync.daily_sync import run_daily_sync
-    scheduler.add_job(
-        run_daily_sync,
-        CronTrigger(hour=7, minute=0, timezone=TZ),
-        args=[slack_client],
-        id="c_notion_sync",
-        name="C Notion Daily Sync",
-        misfire_grace_time=600,
-    )
+    # C: Attio → Notion daily sync — 7 AM every day (skipped if NOTION_TOKEN not set)
+    if config.NOTION_TOKEN:
+        from notion_sync.daily_sync import run_daily_sync
+        scheduler.add_job(
+            run_daily_sync,
+            CronTrigger(hour=7, minute=0, timezone=TZ),
+            args=[slack_client],
+            id="c_notion_sync",
+            name="C Notion Daily Sync",
+            misfire_grace_time=600,
+        )
+    else:
+        logger.info("Notion not configured — skipping C Notion Daily Sync job.")
 
     logger.info("Scheduler configured with %d jobs.", len(scheduler.get_jobs()))
     return scheduler

@@ -250,5 +250,7 @@ class NotionProductionDB:
         logger.info("Added %d properties to Notion database.", len(to_add))
 
 
-# Singleton
-notion_db = NotionProductionDB()
+# Singleton — None if Notion is not configured
+notion_db: NotionProductionDB | None = (
+    NotionProductionDB() if config.NOTION_TOKEN else None
+)

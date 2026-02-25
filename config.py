@@ -26,9 +26,9 @@ ATTIO_DEAL_OBJECT = os.getenv("ATTIO_DEAL_OBJECT", "deals")
 ATTIO_CONTACT_OBJECT = os.getenv("ATTIO_CONTACT_OBJECT", "people")
 ATTIO_COMPANY_OBJECT = os.getenv("ATTIO_COMPANY_OBJECT", "companies")
 
-# ─── Notion ───────────────────────────────────────────────────────────────────
-NOTION_TOKEN = _require("NOTION_TOKEN")
-NOTION_PRODUCTION_DB_ID = _require("NOTION_PRODUCTION_DB_ID")
+# ─── Notion (optional — Notion features disabled if not set) ──────────────────
+NOTION_TOKEN = os.getenv("NOTION_TOKEN", "")
+NOTION_PRODUCTION_DB_ID = os.getenv("NOTION_PRODUCTION_DB_ID", "")
 
 # ─── Anthropic ────────────────────────────────────────────────────────────────
 ANTHROPIC_API_KEY = _require("ANTHROPIC_API_KEY")
