@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(chmod:*)",
+      "Bash(python -m pytest:*)",
+      "Bash(python3 -m pytest:*)",
+      "Bash(source .venv/bin/activate)",
+      "Bash(pip3 show:*)",
+      "Bash(pip show:*)",
+      "Bash(pip3 install:*)",
+      "Bash(xargs:*)"
+    ]
+  }
+}

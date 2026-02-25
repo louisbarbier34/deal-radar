@@ -1,0 +1,11 @@
+.env
+token.json
+credentials.json
+rabbit_state.db*
+viktor_state.db*
+rabbit.log
+__pycache__/
+*.pyc
+.pytest_cache/
+tests/
+.git/

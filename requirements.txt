@@ -1,0 +1,40 @@
+# Slack
+slack-bolt==1.21.3
+slack-sdk==3.34.0
+
+# Anthropic / Claude
+anthropic==0.45.0
+
+# Notion
+notion-client==2.3.0
+
+# Google (Gmail + Calendar)
+google-auth==2.38.0
+google-auth-oauthlib==1.2.1
+google-auth-httplib2==0.2.0
+google-api-python-client==2.160.0
+
+# Scheduling
+apscheduler==3.11.0
+
+# HTTP
+httpx==0.28.1
+requests==2.32.3
+tenacity==9.0.0
+
+# Web search (Research Agent)
+duckduckgo-search==6.3.7
+
+# Utils
+python-dotenv==1.0.1
+pydantic==2.10.6
+python-dateutil==2.9.0
+pytz==2025.1
+
+# Process supervision (for production)
+supervisor==4.2.5
+
+# Testing
+pytest==8.3.4
+pytest-asyncio==0.25.3
+freezegun==1.5.1

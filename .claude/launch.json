@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "viktor-bot",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["/Users/louisbarbier/Desktop/deal radar/run_viktor.sh"],
+      "port": 3000
+    },
+    {
+      "name": "webhook-server",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["/Users/louisbarbier/Desktop/deal radar/run_webhook.sh"],
+      "port": 8765
+    }
+  ]
+}
